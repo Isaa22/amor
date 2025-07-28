@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f1f1;
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.confetti-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+header {
+    background: linear-gradient(135deg, #a71d31, #3f0d12);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.surpresa {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-family: 'Dancing Script', cursive;
+    animation: pulse 2s infinite;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    background-color: #ff4d4d;
+    position: relative;
+    margin: 20px auto;
+    transform: rotate(45deg);
+    animation: heartbeat 1.5s infinite;
+}
+
+.heart:before, .heart:after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #ff4d4d;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    top: -50px;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: -50px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #a71d31;
+    margin-bottom: 1rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.counter {
+    background: linear-gradient(135deg, #3f0d12, #a71d31);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.counter h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.countdown div {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    min-width: 100px;
+}
+
+.countdown span {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.countdown small {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.gallery {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.gallery h3 {
+    font-size: 2rem;
+    color: #a71d31;
+    margin-bottom: 2rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.photo-frame {
+    width: 300px;
+    height: 300px;
+    border: 10px solid #a71d31;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.photo-frame:hover {
+    transform: scale(1.05);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.photo-frame:hover img {
+    transform: scale(1.1);
+}
+
+.letter {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 3rem 0;
+}
+
+.letter h3 {
+    font-size: 2rem;
+    color: #a71d31;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Dancing Script', cursive;
+}
+
+.letter-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.letter-content p {
+    margin-bottom: 1.5rem;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    text-align: right;
+    margin-top: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #3f0d12;
+    color: white;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+audio {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes heartbeat {
+    0% { transform: rotate(45deg) scale(1); }
+    25% { transform: rotate(45deg) scale(1.1); }
+    50% { transform: rotate(45deg) scale(1); }
+    75% { transform: rotate(45deg) scale(1.1); }
+    100% { transform: rotate(45deg) scale(1); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .surpresa {
+        font-size: 2.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .countdown {
+        gap: 1rem;
+    }
+    
+    .countdown div {
+        padding: 0.8rem 1rem;
+        min-width: 80px;
+    }
+    
+    .countdown span {
+        font-size: 2rem;
+    }
+    
+    .photo-frame {
+        width: 250px;
+        height: 250px;
+    }
+}
